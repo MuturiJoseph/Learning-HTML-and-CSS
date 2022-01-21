@@ -1,12 +1,22 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 html {
   font-size: 62.5%;
 }
 :root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
+  --color-accent: #ff3400;
   --color-heading: #1b0760;
   --color-body: #918ca4;
+  --color-body-darker:#5c5577;
+  --color-border:#ccc;
+  --
 }
+/*Typography*/
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
   color: var(--color-body);
@@ -45,3 +55,341 @@ p {
     font-size: 2.4rem;
   }
 }
+/*links*/
+a {
+  text-decoration: none;
+}
+.link-arrow {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.link-arrow::after {
+  content: "-->";
+  margin-left: 5px;
+  transition: margin 0.15s;
+}
+.link-arrow:hover::after {
+  margin-left: 10px;
+}
+@media screen and(min-width:1024px) {
+  link-arrow {
+    font-size: 1.5rem;
+  }
+}
+/* Badges*/
+.badge {
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
+}
+.badge--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.badge--secondary {
+  background: var(--color-secondary);
+  color: #fff;
+}
+.badge--small {
+  font-size: 1.6rem;
+  padding: 0.5rem 1.5rem;
+}
+@media screen and (min-width: 1024) {
+  .badge {
+    font-size: 1.5rem;
+  }
+  .badge--small {
+    font-size: 1.2rem;
+  }
+}
+/*lists*/
+.list {
+  list-style-type: none;
+  padding-left: 0;
+  color: var(--color-heading);
+}
+.list--inline .list__item {
+  display: inline-block;
+  margin-right: 2rem;
+}
+.list--tick {
+  list-style-image: url(../images/tick.svg);
+  padding-left: 3rem;
+}
+.list--tick .list__item {
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 1024px) {
+  .list--tick .list__item {
+    padding-left: 0;
+  }
+}
+/* Icons */
+.icon {
+  width: 40px;
+  height: 40px;
+}
+.icon--small{
+  width: 30px;
+  height: 30px;
+}
+
+.icon--primary {
+  fill: var(--color-primary);
+}
+.icon--white{
+  fill:#fff;
+}
+
+.icon-container {
+  align-items: center;
+  background: #f3f9fa;
+  border-radius: 100%;
+  display: inline-flex;
+  height: 64px;
+  justify-content: center;
+  width: 64px;
+}
+.icon-container--accent{
+  background: var(--color-accent);}
+
+/*buttons*/
+.btn {
+  border-radius: 40px;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  padding: 2rem 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn--primary:hover {
+  background: #3a8ffd;
+}
+.btn--secondary {
+  background: var(--color-secondary);
+  color: #fff;
+}
+.btn--secondary:hover {
+  background: #00c8eb;
+}
+.btn--accent {
+  background: var(--color-accent);
+  color: #fff;
+}
+.btn--accent:hover {
+  background: #ec3000;
+}
+.btn--outline {
+  background: #fff;
+  color: var(--color-heading);
+  border: 2px solid var(--color-heading);
+}
+.btn--outline:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn--block {
+  width: 100%;
+  display: inline-block;
+}
+@media screen and (min-width: 1024) {
+  .btn {
+    font-size: 1.5rem;
+  }
+}
+/*input*/
+.input {
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  color: var(--color-heading);
+  font-size: 2rem;
+  outline: 0;
+  padding: 1.5rem 3.5rem;
+}
+::placeholder {
+  color: #cdcbd7;
+}
+.input-group {
+  border: 1px solid rgb(250, 21, 21);
+  border-radius: 30px;
+  display: flex;
+}
+.input-group .input {
+  border: 0;
+  flex-grow: 1;
+  padding: 1.5rem 1rem;
+}
+.input-group .btn {
+  margin: 4px;
+}
+@media screen and (min-width: 1024px) {
+  .input {
+    font-size: 1.5rem;
+  }
+}
+/*cards*/
+.card {
+  border-radius: 7px;
+  box-shadow: 0 0 20px 10px #f3f3f3;
+  overflow: hidden;
+}
+.card__header,
+.card__body {
+  padding: 2rem 3rem;
+}
+.card--primary .card__header {
+  background: var(--color-primary);
+  color: #fff;
+}
+.card--secondary .card__header {
+  background: var(--color-secondary);
+  color: #fff;
+}
+.card--secondary .badge--secondary {
+  background: #02cdf1;
+}
+/*plans*/
+.plan__name {
+  margin: 0;
+  font-weight: 500;
+  font-size: 2.4rem;
+  color: #fff;
+}
+.plan__price {
+  font-size: 6rem;
+}
+.plan__billing-cycle {
+  font-size: 2.4rem;
+  font-weight: 300;
+  opacity: 0.8;
+  margin-right: 1rem;
+}
+.plan__description {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: block;
+}
+.plan .list__item {
+  margin-bottom: 2rem;
+}
+.plan--popular .card__header {
+  position: relative;
+}
+.plan--popular .card__header::before {
+  content: url(../images/popular.svg);
+  width: 40px;
+  display: inline-block;
+  position: absolute;
+  top: -6px;
+  right: 5%;
+}
+@media screen and (min-width: 1024px) {
+  .plan__name {
+    font-size: 1.4rem;
+  }
+  .plan__price {
+    font-size: 5rem;
+  }
+  .plan__billing-cycle {
+    font-size: 1.6rem;
+  }
+}
+/*media*/
+.media {
+  display: flex;
+}
+.media__title {
+  margin-top: 0;
+}
+.media__body {
+  margin: 0 2rem;
+}
+.media__image {
+  margin-top: 1rem;
+}
+/*quotes*/
+.quote{
+  font-size: 3rem;
+  font-style: italic;
+  color:var(--color-body-darker);
+  line-height: 1.3rem;
+}
+.quote__text::before{
+  content: open-quote;
+}
+.quote__text::after{
+content: close-quote;
+}
+.quote__author{
+  font-size: 3rem;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 0;
+}
+.quote__organization{
+  color: var(--color-heading);
+  opacity: .4;
+  font-size: 2rem;
+  font-style: normal;
+}
+.quote__line{
+  position: relative;
+  bottom:10px ;
+}
+@media screen and (min-width:1024px){
+.quote{font-size: 2ren;}
+.quote__author{font-size:2.4rem ;} 
+.quote__organization{font-size: 1.6rem;} 
+}
+/*grid*/
+.grid{
+  display:grid;
+}
+@media screen and (min-width:768px) {
+  .grid--cols2{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media screen and (min-width:1024px) {
+  .grid--cols3{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+/*testimonial*/
+.testimonial{
+  padding:3rem;
+}
+.testimonial__image{
+  position: relative;
+}
+.testimonial__image > img{
+  width: 100%;
+}
+.testimonial__image > .icon-container{
+  position: absolute;
+  top:3rem;
+  right:-32px;
+}
+@media screen and (min-width) {
+  .testimonial .quote, .testimonial .quote{
+    font-size: 2.4rem;
+  }
+  .testimonial .quote{
+    margin-left: 6rem;
+  }
+}
+/*callouts*/
