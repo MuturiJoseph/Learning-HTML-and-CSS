@@ -1,1 +1,3 @@
-# This is a website I developed in my 60 days of learning html and css
+# This is a website developed using html and css
+To run be ro run the project you require vs code and liveserver extension
+clone the repository directly then run using the liveserver
